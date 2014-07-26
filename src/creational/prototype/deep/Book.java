@@ -1,6 +1,10 @@
 package creational.prototype.deep;
 
-public class Book implements Cloneable {
+import java.io.Serializable;
+
+public class Book implements Cloneable, Serializable { 
+
+    private static final long serialVersionUID = 1L;
 
     private String name;
     private double price;

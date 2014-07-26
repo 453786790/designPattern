@@ -1,5 +1,7 @@
 package creational.prototype.deep;
 
+import java.io.IOException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -13,5 +15,13 @@ public class Main {
         User user = up.clone();
         System.out.println(user.getBook().getName());
         System.out.println(up == user);
+
+        User user2 = null;
+        try {
+            user2 = (User)up.deepClone();
+        } catch (ClassNotFoundException | IOException e) {
+            e.printStackTrace();
+        } 
+        System.out.println(user2.getBook().getName());
     }
 }
